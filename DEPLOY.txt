@@ -1,0 +1,94 @@
+============================================
+  CRYPTO BOT BY ASM TRADERS — GITHUB PAGES
+  CORRECT DEPLOY (fix CSS/JS issue)
+============================================
+
+Your site URL:  https://crypto-by-asm.github.io/Ai/
+
+That means the GitHub repository name is probably "Ai"
+under the account "crypto-by-asm".
+
+------------------------------------------------
+STEP 1 — Correct folder structure on GitHub
+------------------------------------------------
+
+Repo ROOT must look EXACTLY like this:
+
+  Ai/   <--- this is the repository root
+  │
+  ├── index.html
+  ├── .nojekyll
+  ├── README.md
+  ├── DEPLOY.txt
+  ├── css/
+  │     └── style.css
+  └── js/
+        ├── app.js
+        ├── indicators.js
+        └── signal-engine.js
+
+WRONG (this breaks CSS):
+  Ai/
+  └── some-folder/
+        ├── index.html
+        └── css/...
+
+------------------------------------------------
+STEP 2 — How to upload correctly
+------------------------------------------------
+
+Option A (GitHub website):
+1. Open your repo: https://github.com/crypto-by-asm/Ai
+2. DELETE any wrong nested folders if present
+3. Click "Add file" → "Upload files"
+4. Drag these items into the ROOT of the repo:
+   - index.html
+   - .nojekyll
+   - css  (the whole folder)
+   - js   (the whole folder)
+5. Commit changes
+
+Option B (Git):
+  git clone https://github.com/crypto-by-asm/Ai.git
+  cd Ai
+  # delete old files, copy new ones into this folder
+  git add .
+  git commit -m "Fix CSS and JS paths"
+  git push
+
+------------------------------------------------
+STEP 3 — GitHub Pages settings
+------------------------------------------------
+
+1. Repo → Settings → Pages
+2. Source: Deploy from a branch
+3. Branch: main  (or master)
+4. Folder: / (root)     <--- NOT /docs
+5. Save
+6. Wait 1–2 minutes, then hard refresh:
+   Ctrl + F5  (or Cmd + Shift + R on Mac)
+
+------------------------------------------------
+STEP 4 — Test
+------------------------------------------------
+
+Open: https://crypto-by-asm.github.io/Ai/
+
+You should see:
+- Dark blue/black background
+- Styled header with buttons
+- Chart area
+- Signal panel
+
+If still white page:
+1. Open browser DevTools (F12) → Network tab
+2. Refresh page
+3. Check if css/style.css shows 404 (red)
+4. If 404 → files are in wrong folder on GitHub
+
+------------------------------------------------
+Gemini key (optional)
+------------------------------------------------
+Scroll to Settings section on the website
+Paste key from https://aistudio.google.com/apikey
+Save — key stays only in your browser.
